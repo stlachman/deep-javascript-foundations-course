@@ -7,7 +7,7 @@
 5. If the parameters are any other values, just test them for strict equality
 */
 
-if (!Object.is || true) {
+if (!Object.is) {
   Object.is = function ObjectIs(v1, v2) {
     if (checkIfNegativeZero(v1) || checkIfNegativeZero(v2)) {
       return checkIfNegativeZero(v1) && checkIfNegativeZero(v2);
