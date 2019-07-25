@@ -1,8 +1,30 @@
-// TODO: write the validation functions
+// - must be a string
+// - must be non-empty
+// - must contain non-whitespace of at least 3 characters
+function isValidName(name) {
+  return typeof name === "string" && name.trim().length >= 3 ? true : false;
+}
 
+// 	- either parameter may only be a string or number
+// - both parameters should be treated as numbers
+// - both numbers must be 0 or higher
+// - both numbers must be whole numbers
+// - `attended` must be less than or equal to `length
+function hoursAttended(attended, length) {
+  if (typeof attended == "string" && attended.trim() != "") {
+    attended = Number(attended);
+  }
+  if (typeof length == "string" && length.trim() != "") {
+    length = Number(length);
+  }
+  if (typeof attended == "number" && typeof length == "number" && attended >= 0 && length >= 0 && Number.isInteger(attended) && Number.isInteger(length) && attended <= length) {
+    return true;
+  } else {
+    return false;
+  }
 
-
-// tests:
+}
+// tests: should all print true
 console.log(isValidName("Frank") === true);
 console.log(hoursAttended(6,10) === true);
 console.log(hoursAttended(6,"10") === true);
